@@ -10,7 +10,7 @@ var _catalog = [
     {id:1, title: 'Widget #1', cost: 1},
     {id:2, title: 'Widget #2', cost: 2},
     {id:3, title: 'Widget #3', cost: 3}
-  ];
+];
 
 var _cartItems = [];
 
@@ -52,23 +52,23 @@ function _addItem(item){
 
 var AppStore = merge(EventEmitter.prototype, {
   emitChange:function(){
-    this.emit(CHANGE_EVENT)
+    this.emit(CHANGE_EVENT);
   },
 
   addChangeListener:function(callback){
-    this.on(CHANGE_EVENT, callback)
+    this.on(CHANGE_EVENT, callback);
   },
 
   removeChangeListener:function(callback){
-    this.removeListener(CHANGE_EVENT, callback)
+    this.removeListener(CHANGE_EVENT, callback);
   },
 
   getCart:function(){
-    return _cartItems
+    return _cartItems;
   },
 
   getCatalog:function(){
-    return _catalog
+    return _catalog;
   },
 
   dispatcherIndex:AppDispatcher.register(function(payload){
@@ -94,6 +94,6 @@ var AppStore = merge(EventEmitter.prototype, {
 
     return true;
   })
-})
+});
 
 module.exports = AppStore;

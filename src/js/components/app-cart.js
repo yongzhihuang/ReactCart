@@ -7,7 +7,7 @@ var Decrease = require('../components/app-decrease.js');
 
 
 function cartItems(){
-  return {items: AppStore.getCart()}
+  return {items: AppStore.getCart()};
 }
 
 var Cart =
@@ -16,10 +16,10 @@ var Cart =
       return cartItems();
     },
     componentWillMount:function(){
-      AppStore.addChangeListener(this._onChange)
+      AppStore.addChangeListener(this._onChange);
     },
     _onChange:function(){
-      this.setState(cartItems())
+      this.setState(cartItems());
     },
     render:function(){
       var total=0;
